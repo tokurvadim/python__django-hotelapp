@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "PT Serif";
+    src: url("../fonts/PTSerif-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header_color: #555555;
+    --link_color: #DDDDDD;
+    --white_color: #FFFFFF;
+    --intro_p_text_color: #FFFFFF;
+    --orange_color: #905E35;
+    --h_color: #333333;
+    --special_offer_block_color: #F9EADD;
+    --gray_color: #ECDED2;
+    --section_padding_top_bottom: 80px;
+    --section_padding_left_right: 18%;
+    --brown_color: #CC8951;
+    --scrollbar_color: #29B5F6;
+    --btn_contact_us_focus_border_color: #29B5F6;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 14px;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-button {
+    display: none;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar_color);
+    border-radius: 5px;
+}
+
+.montserrat_light {
+    font-family: "Montserrat Light", sans-serif;
+}
+
+.montserrat_regular {
+    font-family: "Montserrat Regular", sans-serif;
+}
+
+.ptserif {
+    font-family: "PT Serif", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}

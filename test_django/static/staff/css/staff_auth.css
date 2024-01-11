@@ -1,0 +1,89 @@
+#section_auth {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--special_offer_block_color);
+}
+
+#auth_container {
+    height: 100%;
+    padding: var(--section_padding_top_bottom) var(--section_padding_left_right);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#h1_auth {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#auth_hr {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: var(--brown_color);
+    height: 5px;
+    border: none;
+}
+
+#form_auth {
+    width: min-max(50%, 100%);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form_field {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form_label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-right: 20px;
+}
+
+.form_input {
+    height: 40px;
+    width: 200px;
+    border: solid 1px var(--gray_color);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    transition: all ease 200ms 0s;
+}
+
+.form_input::placeholder {
+    font-family: "Montserrat Regular", sans-serif;
+    font-size: 1.1rem;
+}
+
+.form_input:focus {
+    outline: none;
+    border-color: var(--btn_contact_us_focus_border_color);
+}
+
+#form_btn {
+    width: 200px;
+    height: 40px;
+    font-size: 1.2rem;
+    color: var(--white_color);
+    background-color: var(--brown_color);
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+#form_message {
+    font-size: 1.2rem;
+    color: red;
+}

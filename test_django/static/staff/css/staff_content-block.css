@@ -1,0 +1,55 @@
+#h1_content-block {
+    font-size: 20px;
+    padding: 20px 40px;
+}
+
+#wrapper_interact-block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.content_block {
+    width: auto;
+    margin: 10px 30px;
+}
+
+.interact_btn {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    color: var(--white_color);
+    background-color: var(--brown_color);
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+#table {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+thead {
+    height: 50px;
+}
+
+tr {
+    height: 50px;
+}
+
+th, td {
+    width: 10%;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--link_color);
+}
+
+.interact_table-row {
+    color: var(--header_color);
+    font-weight: 700;
+}
+
+.interact_table-row:hover {
+    text-decoration: underline;
+}

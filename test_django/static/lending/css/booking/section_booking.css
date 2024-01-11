@@ -1,0 +1,73 @@
+#section_booking {
+    height: auto;
+    padding: var(--section_padding_top_bottom) var(--section_padding_left_right);
+    background-color: var(--special_offer_block_color);
+}
+
+#h_form {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+#p_form {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+#form_booking {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.form_field {
+    width: 50%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form_label {
+    font-size: 1.1rem;
+}
+
+.form_input {
+    height: 40px;
+    width: 270px;
+    border: solid 1px var(--gray_color);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    transition: all ease 200ms 0s;
+}
+
+.form_input::placeholder {
+    font-family: "Montserrat Regular", sans-serif;
+    font-size: 1.1rem;
+}
+
+.form_input:focus {
+    outline: none;
+    border-color: var(--btn_contact_us_focus_border_color);
+}
+
+#input_requests {
+    width: 400px;
+}
+
+#input_btn {
+    width: 200px;
+    height: 40px;
+    font-size: 1.2rem;
+    color: var(--white_color);
+    background-color: var(--brown_color);
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}

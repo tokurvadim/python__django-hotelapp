@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Гостиница "Отель"</title>
+    <link href="{% static '__root__/root.css' %}" rel="stylesheet">
+    <link href="{% static '__root__/lending/header.css' %}" rel="stylesheet">
+    <link href="{% static '__root__/lending/footer.css' %}" rel="stylesheet">
+    {% block content_style %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav class="montserrat montserrat_light">
+            <a href="{% url 'lending:index' %}" class="header_link">Главная</a>
+            <a href="{% url 'lending:rooms' %}" class="header_link">Номера</a>
+            <a href="{% url 'lending:booking' %}" class="header_link" onclick="setOptionDateForm('')">Бронь</a>
+            <a href="{% url 'lending:contacts' %}" class="header_link">Контакты</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div id="footer_wrapper">
+            <div id="footer_menu">
+                <a href="{% url 'lending:index' %}" class="footer_menu_link montserrat_regular">Главная</a>
+                <a href="{% url 'lending:rooms' %}" class="footer_menu_link montserrat_regular">Номера</a>
+                <a href="{% url 'lending:booking' %}" class="footer_menu_link montserrat_regular" onclick="setOptionDateForm('')">Бронь</a>
+                <a href="{% url 'lending:contacts' %}" class="footer_menu_link montserrat_regular">Контакты</a>
+            </div>
+            <p id="footer_p_copyright" class="montserrat_light">&#169; Гостиница "Отель". Любые совпадения случайны.</p>
+        </div>
+    </footer>
+    <script defer src="{% static 'lending/js/base/localStorage.js' %}"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

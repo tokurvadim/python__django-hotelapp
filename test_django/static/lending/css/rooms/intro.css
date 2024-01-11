@@ -1,0 +1,45 @@
+#section_intro {
+    padding: var(--section_padding_top_bottom) var(--section_padding_left_right);
+    width: 100%;
+}
+
+#wrapper_intro {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#img_big_intro {
+    margin-right: 30px;
+    width: 50%;
+    height: 50%;
+}
+
+#div_right_intro {
+
+}
+
+#img_small_intro {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+#h2_wrapper_intro {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+#p_wrapper_intro {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn_rooms_page {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    background-color: var(--brown_color);
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--white_color)
+}

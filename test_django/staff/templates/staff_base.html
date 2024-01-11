@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Гостиница "Отель"</title>
+    <link href="{% static '__root__/root.css' %}" rel="stylesheet">
+    <link href="{% static '__root__/staff/header.css' %}" rel="stylesheet">
+    <link href="{% static '__root__/staff/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'staff/css/staff_base.css' %}" rel="stylesheet">
+    {% block content_style %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div id="header_wrapper">
+            <h1 class="montserrat_regular" id="header_wrapper_h1">Добро пожаловать,
+                {% if user.get_full_name %}
+                    {{ user.get_full_name }} |
+                {% else %}
+                    {{ user.username }} |
+                {% endif %}
+                <a href="{% url 'staff:logout' %}" class="montserrat_regular" id="header_link-logout">Выйти</a>
+            </h1>
+        </div>
+    </header>
+    <main>
+        <div id="wrapper_sidebar">
+            <nav class="montserrat_light">
+                <a href="{% url 'staff:bookings' %}" class="sidebar_link">Брони</a>
+                <a href="{% url 'staff:guests' %}" class="sidebar_link">Гости</a>
+                <a href="{% url 'staff:rooms' %}" class="sidebar_link">Номера</a>
+                <a href="{% url 'staff:payments' %}" class="sidebar_link">Платежи</a>
+                <a href="{% url 'staff:questions' %}" class="sidebar_link">Вопросы</a>
+            </nav>
+        </div>
+        <div id="wrapper_content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer>
+        <div id="footer_wrapper">
+            <p id="footer_p_copyright" class="montserrat_light">&#169; Гостиница "Отель". Любые совпадения случайны.</p>
+        </div>
+    </footer>
+    {% block script %}{% endblock %}
+</body>
+</html>

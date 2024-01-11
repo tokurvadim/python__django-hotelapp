@@ -1,0 +1,17 @@
+header {
+    padding: 5vh 10vw;
+    background-color: var(--header_color);
+}
+
+#header_wrapper_h1 {
+    font-size: 2rem;
+    color: var(--link_color);
+}
+
+#header_link-logout {
+    color: var(--link_color);
+}
+
+#header_link-logout:hover {
+    text-decoration:underline;
+}

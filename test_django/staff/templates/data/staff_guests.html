@@ -1,0 +1,50 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link rel="stylesheet" href="{% static 'staff/css/staff_content-block.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="wrapper_interact-block" class="content_block">
+    <a href="{% url 'staff:add_guest' %}" class="montserrat_light interact_btn">Добавить запись</a>
+</div>
+<div id="wrapper_table-block" class="content_block">
+    {% if guests %}
+    <table id="table" class="montserrat_regular">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Телефон</th>
+                <th>Въезд</th>
+                <th>Выезд</th>
+                <th style="width: 15%;">Email</th>
+                <th>День рождения</th>
+                <th>Паспорт</th>
+                <th>Номер</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guest in guests %}
+                <tr>
+                    <th>{{ guest.full_name }}</th>
+                    <td>{{ guest.phone }}</td>
+                    <td>{{ guest.date_in }}</td>
+                    <td>{{ guest.date_out }}</td>
+                    <td style="width: 15%;">{{ guest.email }}</td>
+                    <td>{{ guest.birth }}</td>
+                    <td>{{ guest.passport }}</td>
+                    <td>{{ guest.room }}</td>
+                    <td><a href="{% url 'staff:change_guest' guest.id %}" class="interact_table-row">Изменить</a></td>
+                    <td><a href="{% url 'staff:delete_guest' guest.id %}" class="interact_table-row">Удалить</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1 id="h1_content-block" class="montserrat_regular">Записи в таблице не обнаружены.</h1>
+    {% endif %}
+</div>
+{% endblock %}

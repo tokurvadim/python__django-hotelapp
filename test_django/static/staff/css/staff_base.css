@@ -1,0 +1,41 @@
+main {
+    display: flex;
+    height: 70%;
+}
+
+#wrapper_sidebar {
+    width: 20%;
+    background-color: var(--h_color);
+    padding: 30px 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.sidebar_link {
+    font-size: 1.5rem;
+    color: var(--link_color);
+    margin-bottom: 20px;
+    transition: background-color 300ms ease, color 300ms ease;
+}
+
+.sidebar_link:last-of-type {
+    margin: 0;
+}
+
+.sidebar_link:hover {
+    text-decoration: underline;
+}
+
+#wrapper_content {
+    background-color: var(--special_offer_block_color);
+    width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+}

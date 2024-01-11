@@ -1,0 +1,11 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link href="{% static 'staff/css/staff_content-block.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<h1 class="montserrat_regular" id="h1_content-block">Приветствуем Вас на административном сайте гостиницы "Отель"!
+    Пожалуйста, выберите пункт меню слева для получения нужной информации.</h1>
+{% endblock %}

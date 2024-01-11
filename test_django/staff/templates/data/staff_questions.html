@@ -1,0 +1,39 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link rel="stylesheet" href="{% static 'staff/css/staff_content-block.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="wrapper_interact-block content_block">
+
+</div>
+<div id="wrapper_table-block" class="content_block">
+    {% if questions %}
+    <table id="table" class="montserrat_regular">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Email</th>
+                <th>Текст вопроса</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+                <tr>
+                    <th>{{ question.name }}</th>
+                    <th>{{ question.email }}</th>
+                    <th>{{ question.question }}</th>
+                    <td><a href="{% url 'staff:answer_question' question.pk %}" class="interact_table-row">Ответить</a></td>
+                    <td><a href="{% url 'staff:delete_question' question.pk %}" class="interact_table-row">Удалить</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1 id="h1_content-block" class="montserrat_regular">Записи в таблице не обнаружены.</h1>
+    {% endif %}
+</div>
+{% endblock %}

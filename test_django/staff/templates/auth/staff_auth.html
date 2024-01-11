@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Гостиница "Отель"</title>
+    <link href="{% static '/__root__/root.css' %}" rel="stylesheet">
+    <link href="{% static '/staff/css/staff_auth.css' %}" rel="stylesheet">
+</head>
+<body>
+    <section id="section_auth">
+        <div id="auth_container">
+            <h1 class="ptserif h1_auth" id="h1_auth">Форма авторизации</h1>
+            <hr id="auth_hr">
+            <form method="POST" id="form_auth">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form_field">
+                        <label class="montserrat_regular form_label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <button class="montserrat_light" id="form_btn" type="submit">Войти</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

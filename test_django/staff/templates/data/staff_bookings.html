@@ -1,0 +1,49 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link rel="stylesheet" href="{% static 'staff/css/staff_content-block.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="wrapper_interact-block" class="content_block">
+    <a href="{% url 'staff:add_booking' %}" class="montserrat_light interact_btn">Добавить запись</a>
+</div>
+
+<div id="wrapper_table-block" class="content_block">
+    {% if bookings %}
+    <table id="table" class="montserrat_light">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Телефон</th>
+                <th>Въезд</th>
+                <th>Выезд</th>
+                <th>Категория номера</th>
+                <th>Пожелания</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+                <tr>
+                    <th>{{ booking.full_name }}</th>
+                    <td>{{ booking.phone }}</td>
+                    <td>{{ booking.date_in }}</td>
+                    <td>{{ booking.date_out }}</td>
+                    <td>{{ booking.room }}</td>
+                    <td>{{ booking.requests }}</td>
+                    <td><a href="{% url 'staff:register_booking' booking.id %}" class="interact_table-row">Зарегистрировать</a></td>
+                    <td><a href="{% url 'staff:change_booking' booking.id %}" class="interact_table-row">Изменить</a></td>
+                    <td><a href="{% url 'staff:delete_booking' booking.id %}" class="interact_table-row">Удалить</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1 id="h1_content-block" class="montserrat_regular">Записи в таблице не обнаружены.</h1>
+    {% endif %}
+</div>
+{% endblock %}

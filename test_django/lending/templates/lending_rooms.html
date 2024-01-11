@@ -1,0 +1,140 @@
+{% extends 'lending_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link href="{% static 'lending/css/rooms/intro.css' %}" rel="stylesheet">
+<link href="{% static 'lending/css/rooms/rooms_list.css' %}" rel="stylesheet">
+<link href="{% static 'lending/css/rooms/rooms_description.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section id="section_intro">
+    <div id="wrapper_intro">
+        <img src="{% static 'images/jpg_rooms-intro/big_img.jpg' %}" alt="" id="img_big_intro">
+        <div id="div_right_intro">
+            <img src=" {% static 'images/jpg_rooms-intro/little_img.jpg' %}" alt="" id="img_small_intro">
+            <h2 class="ptserif" id="h2_wrapper_intro">Номер для молодоженов</h2>
+            <p class="montserrat_light" id="p_wrapper_intro">Номер для молодоженов — это завершающая часть радостного торжества,
+                ставшая уже традицией. После насыщенного и порой тяжелого дня, для молодых номер в гостинице –
+                это возможность побыть наедине, и завершить торжество в спокойной романтичной обстановке.
+                Главное требование к номеру: атмосфера романтики, которая и отличает такой номер от других
+                номеров в отеле, особый дизайн, обслуживание в номере. Это не какой-то конкретный номер в отеле,
+                в котором проживают только новобрачные, это услуга, которую гостиница оказывает молодым
+                в предоставлении украшенного и полного романтики номера, соответствующего пожеланиям молодой пары.</p>
+            <a href="{% url 'lending:booking' %}" class="btn_rooms_page montserrat_light" id="btn_wrapper_intro" onclick="setOptionDateForm('Standart')">Забронировать</a>
+        </div>
+    </div>
+</section>
+<section id="section_rooms_list">
+    <div id="wrapper_rooms_list">
+        <h1 class="ptserif" id="title_wrapper_rooms_list">Номера в гостинице</h1>
+        <p class="montserrat_light" id="subtitle_wrapper_rooms_list">В нашей гостинице любой желающий может
+            забронировать номер</p>
+        <div id="container_wrapper_rooms_list">
+            <div class="card_wrapper_rooms_list">
+                <img src="{% static 'images/jpg_rooms-list/single.jpg' %}" alt="" class="img_card_wrapper_rooms_list elem_wrapper_rooms_list">
+                <h3 class="title_card_wrapper_rooms_list elem_wrapper_rooms_list montserrat_light">Номер <b>"Single"</b></h3>
+                <p class="montserrat_light p_card_wrapper_rooms_list elem_wrapper_rooms_list">Вариант для
+                    проживания одного! Все необходимые удобства.</p>
+                <p class="ptserif price_card_wrapper_rooms_list elem_wrapper_rooms_list">от 2190 руб./сутки</p>
+                <a href="{% url 'lending:booking' %}" class="btn_rooms_page montserrat_light elem_wrapper_rooms_list" onclick="setOptionDateForm('Single')">Забронировать номер</a>
+            </div>
+            <div class="card_wrapper_rooms_list">
+                <img src="{% static 'images/jpg_rooms-list/standard.jpg' %}" alt="" class="img_card_wrapper_rooms_list elem_wrapper_rooms_list">
+                <h3 class="title_card_wrapper_rooms_list elem_wrapper_rooms_list montserrat_light">Номер <b>"Standard"</b></h3>
+                <p class="montserrat_light p_card_wrapper_rooms_list elem_wrapper_rooms_list">Хороший вариант
+                    для двоих! Повышенный комфорт.</p>
+                <p class="ptserif price_card_wrapper_rooms_list elem_wrapper_rooms_list">от 2990 руб./сутки</p>
+                <a href="{% url 'lending:booking' %}" class="btn_rooms_page montserrat_light elem_wrapper_rooms_list" onclick="setOptionDateForm('Standart')">Забронировать номер</a>
+            </div>
+            <div class="card_wrapper_rooms_list">
+                <img src="{% static 'images/jpg_rooms-list/premium.jpg' %}" alt="" class="img_card_wrapper_rooms_list elem_wrapper_rooms_list">
+                <h3 class="title_card_wrapper_rooms_list elem_wrapper_rooms_list montserrat_light">Номер <b>"Premium"</b></h3>
+                <p class="montserrat_light p_card_wrapper_rooms_list elem_wrapper_rooms_list">Лучший вариант для
+                    нескольких человек! Лучшие удобства для идеального времяпровождения.</p>
+                <p class="ptserif price_card_wrapper_rooms_list elem_wrapper_rooms_list">от 3590 руб./сутки</p>
+                <a href="{% url 'lending:booking' %}" class="btn_rooms_page montserrat_light elem_wrapper_rooms_list" onclick="setOptionDateForm('Premium')">Забронировать номер</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="section_rooms_description">
+    <div id="wrapper_rooms_desc">
+        <div class="card_wrapper_rooms_desc card_normal">
+            <div class="wrapper_img_card_wrapper_rooms_desc">
+                <img src="{% static 'images/jpg_rooms-description/single.jpg' %}" alt="" class="img_card_wrapper_rooms_desc">
+            </div>
+            <div class="div_text_card_wrapper_rooms_desc">
+                <h4 class="ptserif title_card_wrapper_rooms_desc">НОМЕР "SINGLE"</h4>
+                <hr class="underline_card_wrapper_rooms_desc">
+                <p class="montserrat_light stats_card_rooms_desc">
+                    Вместимость: 1 человек<br>
+                    Количество комнат: 1<br>
+                    Площадь: 18 м.кв.<br>
+                    Кровати: 1 кровать шириной 90 см.
+                </p>
+                <dl class="montserrat_light list_adv_card_rooms_list">
+                    <dt class="title_card_rooms_list">В номере:</dt>
+                    <dd class="adv_card_rooms_list">Односпальная кровать 90х200 см</dd>
+                    <dd class="adv_card_rooms_list">Функциональная мебель</dd>
+                    <dd class="adv_card_rooms_list">Настенная плазменная панель</dd>
+                    <dd class="adv_card_rooms_list">Телефон с бесплатным городским соединением</dd>
+                    <dd class="adv_card_rooms_list">Звукоизоляционная дверь в номер и т.д. по запросу</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="card_wrapper_rooms_desc card_reverse">
+            <div class="wrapper_img_card_wrapper_rooms_desc">
+                <img src="{% static 'images/jpg_rooms-description/standard.jpg' %}" alt="" class="img_card_wrapper_rooms_desc">
+            </div>
+            <div class="div_text_card_wrapper_rooms_desc">
+                <h4 class="ptserif title_card_wrapper_rooms_desc">НОМЕР "STANDART"</h4>
+                <hr class="underline_card_wrapper_rooms_desc">
+                <p class="montserrat_light stats_card_rooms_desc">
+                    Вместимость: 1 или 2 человека<br>
+                    Количество комнат: 1<br>
+                    Площадь: 20 м.кв.<br>
+                    Кровати: одна кровать шириной 180 см или две кровати шириной 90 см.<br>
+                </p>
+                <dl class="montserrat_light list_adv_card_rooms_list">
+                    <dt class="title_card_rooms_list">В номере:</dt>
+                    <dd class="adv_card_rooms_list">Одна кровать шириной 180 см или две кровати шириной 90 см</dd>
+                    <dd class="adv_card_rooms_list">Функциональная мебель</dd>
+                    <dd class="adv_card_rooms_list">Настенная плазменная панель</dd>
+                    <dd class="adv_card_rooms_list">Телефон с бесплатным городским соединением</dd>
+                    <dd class="adv_card_rooms_list">Звукоизоляционная дверь в номер</dd>
+                    <dd class="adv_card_rooms_list">На окнах шторы  blackout и т.д. по запросу</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="card_wrapper_rooms_desc card_normal">
+            <div class="wrapper_img_card_wrapper_rooms_desc">
+                <img src="{% static 'images/jpg_rooms-description/premium.jpg' %}" alt="" class="img_card_wrapper_rooms_desc">
+            </div>
+            <div class="div_text_card_wrapper_rooms_desc">
+                <h4 class="ptserif title_card_wrapper_rooms_desc">НОМЕР "PREMIUM"</h4>
+                <hr class="underline_card_wrapper_rooms_desc">
+                <p class="montserrat_light stats_card_rooms_desc">
+                    Вместимость: 1 или 2 человека<br>
+                    Количество комнат: 2<br>
+                    Площадь: 28 м.кв.<br>
+                    Кровати: одна кровать шириной 180 см.<br>
+                </p>
+                <dl class="montserrat_light list_adv_card_rooms_list">
+                    <dt class="title_card_rooms_list">В номере:</dt>
+                    <dd class="adv_card_rooms_list">Одна кровать шириной 180 см</dd>
+                    <dd class="adv_card_rooms_list">Функциональная мебель</dd>
+                    <dd class="adv_card_rooms_list">Настенная плазменная панель</dd>
+                    <dd class="adv_card_rooms_list">Телефон с бесплатным городским соединением</dd>
+                    <dd class="adv_card_rooms_list">Звукоизоляционная дверь в номер</dd>
+                    <dd class="adv_card_rooms_list">На окнах шторы  blackout</dd>
+                    <dd class="adv_card_rooms_list">Чайная станция и т.д. по запросу</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

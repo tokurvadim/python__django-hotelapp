@@ -1,0 +1,95 @@
+{% extends 'lending_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link href="{% static 'lending/css/index/intro.css' %}" rel="stylesheet">
+<link href="{% static 'lending/css/index/special_offers.css' %}" rel="stylesheet">
+<link href="{% static 'lending/css/index/hotel_actions.css' %}" rel="stylesheet">
+<link href="{% static 'lending/css/index/contact_us.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section id="section_intro">
+    <img id="img_intro_bg" src="{% static 'images/jpg_index-intro.jpg' %}" alt="">
+    <div id="wrapper_intro">
+        <h1 class="section_intro_elem container_intro_text ptserif" id="h_intro">
+            Добро пожаловать в гостиницу "Отель"!
+        </h1><br>
+        <p class="section_intro_elem container_intro_text montserrat_regular font-light" id="p_intro">
+            Специальное предложение! Забронируйте номер в гостинице в течение дня и получите бесплатное такси от
+            аэропорта/вокзала до места.
+        </p>
+        <a href="{% url 'lending:booking' %}" class="section_intro_elem montserrat_light" id="btn_booking_room" onclick="setOptionDateForm('')">Забронировать
+            номер</a>
+    </div>
+</section>
+<section id="section_special_offers">
+    <h2 class="h_special_offers ptserif">Специальные предложения!</h2>
+    <div id="wrapper_offers">
+        <div class="container_offer">
+            <img src="{% static 'images/svg_special-offers/love.svg' %}" alt="" class="img_cont_special_offer">
+            <h3 class="h_cont_special_offer montserrat_regular">Тариф для молодоженов</h3>
+            <p class="p_cont_special_offer montserrat_light">Молодоженам скидка 10% на заселение в любую
+                категорию номера!</p>
+        </div>
+        <div class="container_offer">
+            <img src="{% static 'images/svg_special-offers/romantic.svg' %}" alt="" class="img_cont_special_offer">
+            <h3 class="h_cont_special_offer montserrat_regular">Тариф романтический</h3>
+            <p class="p_cont_special_offer montserrat_light">Уютный номер на двоих! Идеальный вариант дял
+                уединения! Скидка 5% на высшие категории номеров!</p>
+        </div>
+        <div class="container_offer">
+            <img src="{% static 'images/svg_special-offers/taxi.svg' %}" alt="" class="img_cont_special_offer">
+            <h3 class="h_cont_special_offer montserrat_regular">Бесплатное такси</h3>
+            <p class="p_cont_special_offer montserrat_light">Забронируйте номер в гостинице в течение дня
+                и получите бесплатное такси от аэропорта/вокзала до места.</p>
+        </div>
+    </div>
+</section>
+<section id="section_hotel_actions">
+    <div id="wrapper_hotel_actions">
+        <div class="container_hotel_action cont_hotel_action_left_side">
+            <div class="container_hotel_action_text">
+                <h3 class="h_hotel_action elem_hotel_action ptserif">Бронируйте номера</h3>
+                <p class="p_hotel_action elem_hotel_action montserrat_light">Гостиничный номер — это помещение
+                    в гостинице или отеле, состоящее из одного или более мест проживания. В нашей
+                    гостинице доступны различные номера для бронирования.</p>
+                <a class="btn_hotel_action elem_hotel_action montserrat_light" href="{% url 'lending:rooms' %}">
+                    Посмотреть номера</a>
+            </div>
+            <img src="{% static 'images/jpg_hotel-actions/action_1.jpg' %}" alt="" class="img_hotel_action">
+        </div>
+        <div class="container_hotel_action cont_hotel_action_right_side">
+            <div class="container_hotel_action_text">
+                <h3 class="h_hotel_action elem_hotel_action ptserif">Бар и ресторан</h3>
+                <p class="p_hotel_action montserrat elem_hotel_action montserrat_light">Предприятие
+                    общественного питания с барной стойкой, реализующее смешанные, крепкие алкогольные,
+                    слабоалкогольные и безалкогольные напитки, закуски, десерты, мучные кондитерские и булочные
+                    изделия, покупные товары.</p>
+            </div>
+            <img src="{% static 'images/jpg_hotel-actions/action_3.jpg' %}" alt="" class="img_hotel_action">
+        </div>
+    </div>
+</section>
+<section id="section_contact_us">
+    <div id="wrapper_contact_us">
+        <img src="{% static 'images/jpg_index-contact-us.jpg' %}" alt="" id="img_contact_us">
+        <div id="container_form_contact_us">
+            <h4 id="h_form_contact_us" class="ptserif">Возникли вопросы?<br>Свяжитесь с нами!</h4>
+            <p id="p_form_contact_us" class="montserrat_light">Если у вас возникли какие-либо вопросы,
+                то вы можете задать их в форме ниже</p>
+            <form action="{% url 'lending:index' %}" method="POST" id="form_contacts_us">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="montserrat_light" id="input_btn_contact_us">Отправить</button>
+            </form>
+            <div class="montserrat_regular" id="form_message"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'lending/js/index/ajax.js' %}"></script>
+{% endblock %}

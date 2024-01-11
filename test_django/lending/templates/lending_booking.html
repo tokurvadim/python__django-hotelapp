@@ -1,0 +1,31 @@
+{% extends 'lending_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link href="{% static 'lending/css/booking/section_booking.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section id="section_booking">
+    <h1 class="ptserif" id="h_form">Бронирование номера</h1>
+    <p class="montserrat_light" id="p_form">На этой странице вы можете заполнить данные для брони номера.</p>
+    <form action="{% url 'lending:booking' %}" method="POST" id="form_booking">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form_field">
+                <label  for="{{ field.id_for_label }}" class="montserrat_regular form_label">{{ field.label }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="montserrat_light" id="input_btn">Забронировать</button>
+        <div class="montserrat_regular" id="form_message"></div>
+    </form>
+</section>
+{% endblock %}
+
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script async src="{% static 'lending/js/booking/setFormOptionRoom.js' %}"></script>
+<script defer src="{% static 'lending/js/booking/setFormOptionsDate.js' %}"></script>
+<script defer src="{% static 'lending/js/booking/ajax.js' %}"></script>
+{% endblock %}

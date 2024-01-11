@@ -1,0 +1,38 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link rel="stylesheet" href="{% static 'staff/css/staff_content-block.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="wrapper_interact-block" class="content_block">
+    <a href="{% url 'staff:add_payment' %}" class="montserrat_light interact_btn">Добавить запись</a>
+</div>
+<div id="wrapper_table-block" class="content_block">
+    {% if payments %}
+    <table id="table" class="montserrat_regular">
+        <thead>
+            <tr>
+                <th>Гость</th>
+                <th>Платёж</th>
+                <th>Дата платежа</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in payments %}
+                <tr>
+                    <th>{{ payment.guest }}</th>
+                    <td>{{ payment.payment }}</td>
+                    <td>{{ payment.date }}</td>
+                    <td><a href="{% url 'staff:change_payment' payment.id %}" class="interact_table-row">Изменить</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1 id="h1_content-block" class="montserrat_regular">Записи в таблице не обнаружены.</h1>
+    {% endif %}
+</div>
+{% endblock %}

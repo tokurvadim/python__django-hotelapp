@@ -1,0 +1,38 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link rel="stylesheet" href="{% static 'staff/css/staff_content-block.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="wrapper_interact-block" class="content_block">
+    <a href="{% url 'staff:add_room' %}" class="montserrat_light interact_btn">Добавить запись</a>
+</div>
+<div id="wrapper_table-block" class="content_block">
+    {% if rooms %}
+    <table id="table" class="montserrat_regular">
+        <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Категория</th>
+                <th>Доступ</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for room in rooms %}
+                <tr>
+                    <td>{{ room.room }}</td>
+                    <td>{{ room.category }}</td>
+                    <td>{{ room.availability }}</td>
+                    <td><a href="{% url 'staff:change_room' room.id %}" class="interact_table-row">Изменить</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1 id="h1_content-block" class="montserrat_regular">Записи в таблице не обнаружены.</h1>
+    {% endif %}
+</div>
+{% endblock %}

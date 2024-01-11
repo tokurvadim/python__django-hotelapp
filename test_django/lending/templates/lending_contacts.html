@@ -1,0 +1,37 @@
+{% extends 'lending_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link href="{% static 'lending/css/contacts/contacts.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section id="section_contacts">
+    <div id="wrapper_contacts">
+        <h1 id="h_wrapper_contacts" class="ptserif">Как нас найти</h1>
+        <div id="container_wrapper_contacts">
+            <div id="cont_contacts_text_socials">
+                <p id="p_cont_contacts_text" class="montserrat_light">
+                    Нижний Новгород, улица Бетанкура 1<br>
+                    E-mail: test@yandex.ru<br>
+                    Телефон: 8 800 300 06 00 отдела продаж<br>
+                    Телефон: 8 800 340 06 00 отдела сбыта<br>
+                    Контактное лицо: Чихринов В. Е.<br>
+                </p>
+                <div id="cont_contacts_socials">
+                    <p id="p_cont_contacts_socials" class="montserrat_light">
+                        Присоединяйтесь к нам в социальных сетях!
+                    </p>
+                    <a href="" class="link_img_container_contacts_socials"><img src="{% static 'images/svg_socials/vk.svg' %}" alt="" class="img_container_contacts_socials"></a>
+                    <a href="" class="link_img_container_contacts_socials"><img src="{% static 'images/svg_socials/telegram.svg' %}" alt="" class="img_container_contacts_socials"></a>
+                    <a href="" class="link_img_container_contacts_socials"><img src="{% static 'images/svg_socials/youtube.svg' %}" alt="" class="img_container_contacts_socials"></a>
+                </div>
+            </div>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A565268957bb43fe6bf53ed9bf172c26b6cc8ee85e42646379ecaebe7d8add053&amp;source=constructor" width="678" height="644" frameborder="0" id="frame_contacts_map"></iframe>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

@@ -1,0 +1,90 @@
+#section_rooms_description {
+    padding: var(--section_padding_top_bottom) var(--section_padding_left_right);
+}
+
+#wrapper_rooms_desc {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card_wrapper_rooms_desc {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: var(--section_padding_top_bottom);
+}
+
+.wrapper_img_card_wrapper_rooms_desc {
+    width: 450px;
+    height: auto;
+    position: relative;
+}
+
+.img_card_wrapper_rooms_desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.title_card_wrapper_rooms_desc {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.underline_card_wrapper_rooms_desc {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+.stats_card_rooms_desc {
+    font-size: 1rem;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+.list_adv_card_rooms_list {
+    font-size: 1rem;
+    line-height: 25px;
+}
+
+.title_card_rooms_list {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.adv_card_rooms_list {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 50px;
+}
+
+.adv_card_rooms_list::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--h_color);
+    top: 50%;
+}
+
+.card_normal {
+    flex-flow: row nowrap;
+}
+
+.card_normal > .wrapper_img_card_wrapper_rooms_desc {
+    margin-right: 50px;
+}
+
+.card_reverse {
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+}
+
+.card_reverse > .div_text_card_wrapper_rooms_desc {
+    margin-right: 50px;
+}

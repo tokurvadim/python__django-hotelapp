@@ -1,0 +1,62 @@
+#section_rooms_list {
+    padding: var(--section_padding_top_bottom) var(--section_padding_left_right);
+    background-color: var(--special_offer_block_color);
+}
+
+#wrapper_rooms_list {
+
+}
+
+#title_wrapper_rooms_list {
+    font-size: 3.5rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#subtitle_wrapper_rooms_list {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#container_wrapper_rooms_list {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.card_wrapper_rooms_list {
+    width: 31%;
+    height: auto;
+    background-color: var(--white_color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.elem_wrapper_rooms_list {
+    margin-bottom: 30px;
+}
+
+.img_card_wrapper_rooms_list {
+    width: 100%;
+    height: auto;
+
+}
+
+.title_card_wrapper_rooms_list {
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.p_card_wrapper_rooms_list {
+    text-align: center;
+    font-size: 1.2rem;
+    height: 100px;
+}
+
+.price_card_wrapper_rooms_list {
+    font-size: 1.3rem;
+}

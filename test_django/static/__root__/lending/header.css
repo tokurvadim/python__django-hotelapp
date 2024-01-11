@@ -1,0 +1,20 @@
+nav {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header_color);
+}
+
+.header_link {
+    font-size: 1.5rem;
+    color: var(--link_color);
+    padding: 1vh 30px;
+    transition: background-color 300ms ease, color 300ms ease;
+}
+
+.header_link:hover {
+    text-decoration: underline;
+    background-color: var(--link_color);
+    color: var(--header_color);
+}

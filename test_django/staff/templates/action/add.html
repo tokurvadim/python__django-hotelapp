@@ -1,0 +1,28 @@
+{% extends 'staff_base.html' %}
+{% load static %}
+
+{% block content_style %}
+<link rel="stylesheet" href="{% static 'staff/css/staff_form.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="montserrat_regular" id="h1_content-block">Добавление записи в таблицу {{ model_name }}</h1>
+<form method="POST" id="form">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form_field">
+        <label  for="{{ field.id_for_label }}" class="montserrat_regular form_label">{{ field.label }}</label>
+        {{ field }}
+    </div>
+    {% endfor %}
+    <button type="submit" class="montserrat_light" id="input_btn">Добавить</button>
+    <div id="form_message" class="montserrat_regular"></div>
+</form>
+{% endblock %}
+
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script defer src="{% static 'staff/js/submitHandler.js' %}"></script>
+<script defer src="{% static 'staff/js/setFormOptionsDate.js' %}"></script>
+<script defer src="{% static 'staff/js/setFormOptionsBirth.js' %}"></script>
+{% endblock %}
